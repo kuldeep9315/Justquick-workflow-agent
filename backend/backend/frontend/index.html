@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JustQuick - HubSpot Workflow Agent</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>⚡ JustQuick</h1>
+                <p class="subtitle">Intelligent HubSpot Workflow Agent</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- API Key Setup -->
+            <section class="setup-section">
+                <h2>Setup Your Connection</h2>
+                <div class="form-group">
+                    <label for="apiKey">HubSpot API Key:</label>
+                    <input 
+                        type="password" 
+                        id="apiKey" 
+                        placeholder="Enter your HubSpot API key"
+                        class="input-field"
+                    >
+                    <button onclick="testConnection()" class="btn btn-primary">Test Connection</button>
+                    <div id="connectionStatus" class="status-message"></div>
+                </div>
+            </section>
+
+            <!-- Command Input -->
+            <section class="command-section">
+                <h2>🤖 Natural Language Commands</h2>
+                <div class="command-input-group">
+                    <textarea 
+                        id="commandInput" 
+                        placeholder='Try: "create workflow to email new contacts" or "list workflows"'
+                        class="command-textarea"
+                    ></textarea>
+                    <button onclick="executeCommand()" class="btn btn-success">Execute Command</button>
+                </div>
+                <div id="commandStatus" class="status-message"></div>
+            </section>
+
+            <!-- Quick Actions -->
+            <section class="quick-actions-section">
+                <h2>Quick Actions</h2>
+                <div class="button-grid">
+                    <button onclick="executeQuickAction('list_workflows')" class="btn btn-outline">
+                        📋 List Workflows
+                    </button>
+                    <button onclick="executeQuickAction('list_contacts')" class="btn btn-outline">
+                        👥 List Contacts
+                    </button>
+                    <button onclick="executeQuickAction('create_workflow')" class="btn btn-outline">
+                        ✨ Create Workflow
+                    </button>
+                </div>
+            </section>
+
+            <!-- Results Panel -->
+            <section class="results-section">
+                <h2>Results</h2>
+                <div class="results-container">
+                    <pre id="resultsPanel" class="results-panel">
+Waiting for command execution...
+                    </pre>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>JustQuick v1.0.0 | Hackathon Project</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
